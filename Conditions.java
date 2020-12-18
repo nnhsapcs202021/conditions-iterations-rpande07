@@ -2,8 +2,8 @@ import java.util.Scanner;
 /**
  * Examples and notes on conditions (Chapter 5)
  *
- * @author rpande
- * @version 01dec2020
+ * @author mrcallaghan
+ * @version 19nov2020
  */
 public class Conditions
 {
@@ -11,6 +11,7 @@ public class Conditions
     {
         // model a coin flip; 1: heads, 0: tails
         int coinFlip = (int)(Math.random() * 2);
+
         /*
          * if statement
          *  Statements are executed if the conditional expression is true.
@@ -24,6 +25,7 @@ public class Conditions
         if (coinFlip == 1)
         {
             System.out.println("Coin is heads!");
+
         }
 
         /*
@@ -34,6 +36,7 @@ public class Conditions
         if (coinFlip == 1)
         {
             System.out.println("Coin is heads!");
+
         }
         else
         {
@@ -166,6 +169,7 @@ public class Conditions
         {
             System.out.println("strings are equal");
         }
+
         /*
          * This is an example of a "short circuit".
          * 
@@ -206,6 +210,7 @@ public class Conditions
          *  Perform the specified mathematical operation to the variable and then assign the
          *      resulting value to the same variable.
          */
+
         int x = 7;
         int y = 7;
         int z = 7;
@@ -222,17 +227,19 @@ public class Conditions
          *  These are equivalent to adding/subtracting 1 to/from the variable.
          *  These return the value before performing the increment/decrement.
          */
+
         int a = 7;
         int b = a++;
+        //a++;
         System.out.println("a = " + a + "; b = " + b);  // a = 8; b = 7
 
-        a--; // decrement works too!
-        --a; //preincrement operator
-        
+        a--; // decrement as well!
+        --a; // preincrement operator
+
         int c = 7;
         int d = ++c;
-        System.out.println("c = " + c + "; d = " + d); // c = 8; d = 8
-
+        System.out.println("c = " + c + "; d = " + d);  // c = 8; d = 8
     }
 
+    
 }
