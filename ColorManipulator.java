@@ -50,7 +50,55 @@ public class ColorManipulator
             }
         }
     }
+    public void maxRed()
+    {
+        int width = this.picture.getWidth();
+        int height = this.picture.getHeight();
 
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = this.picture.getPixel( x, y );
+                pixel.setRed( 255 );
+            }
+        }
+    }
+    public void maxGreen()
+    {
+        int width = this.picture.getWidth();
+        int height = this.picture.getHeight();
+
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = this.picture.getPixel( x, y );
+                pixel.setGreen( 255 );
+            }
+        }
+    }
+    public void grayscale()
+    {
+    //    int width = this.picture.getWidth();
+    //    int height = this.picture.getHeight();
+
+    //    for( int y = 0; y < height; y++ )
+    //    {
+    //        for( int x = 0; x < width; x++ )
+    //        {
+    //            Pixel pixel = this.picture.getPixel( x, y );
+    //            Color color = pixel.getColor();
+                
+    //            int grayscaledRed = color.getRed()/3;
+    //            int grayscaledBlue = color.getBlue()/3;
+    //            int grayscaledGreen = color.getGreen()/3;
+                
+    //            Color grayscaled = new Color( grayscaledRed, grayscaledBlue, grayscaledGreen );
+    //            pixel.setColor( grayscaled );
+    //        }
+    //    }
+    }
     /**
      * Negates the color of every pixel in the picture
      *
@@ -83,6 +131,14 @@ public class ColorManipulator
         // the selfie image must be in the Shepard Fairey folder
         Picture picture= new Picture( "selfiePortrait.jpg" );
         ColorManipulator manipulator = new ColorManipulator( picture );
+        picture.explore();
+        manipulator.maxBlue();
+        picture.explore();
+        manipulator.maxRed();
+        picture.explore();
+        manipulator.maxGreen();
+        picture.explore();
+        manipulator.grayscale();
         picture.explore();
         manipulator.negate();
         picture.explore();
