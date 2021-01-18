@@ -1,3 +1,4 @@
+
 import java.awt.Color;
 
 /**
@@ -19,7 +20,7 @@ public class ColorManipulator
     {
         this.picture = newPicture;
     }
-    
+
     /**
      * Returns the Picture associated with this ColorManipulator object. Intended to
      *      be used by the test class.
@@ -30,7 +31,6 @@ public class ColorManipulator
     {
         return this.picture;
     }
-
     /**
      * Sets the blue component of the color of every pixel in the picture to the maximum value
      *
@@ -50,6 +50,7 @@ public class ColorManipulator
             }
         }
     }
+
     public void maxRed()
     {
         int width = this.picture.getWidth();
@@ -64,6 +65,7 @@ public class ColorManipulator
             }
         }
     }
+
     public void maxGreen()
     {
         int width = this.picture.getWidth();
@@ -78,6 +80,7 @@ public class ColorManipulator
             }
         }
     }
+
     public void grayscale()
     {
     //    int width = this.picture.getWidth();
@@ -89,16 +92,18 @@ public class ColorManipulator
     //        {
     //            Pixel pixel = this.picture.getPixel( x, y );
     //            Color color = pixel.getColor();
-                
-    //            int grayscaledRed = color.getRed()/3;
-    //            int grayscaledBlue = color.getBlue()/3;
-    //            int grayscaledGreen = color.getGreen()/3;
-                
-    //            Color grayscaled = new Color( grayscaledRed, grayscaledBlue, grayscaledGreen );
+
+    //            int red = color.getRed();
+    //            int blue = color.getBlue();
+    //            int green = color.getGreen();
+    //            int averaged = (red + blue + green)/3;
+
+    //            Color grayscaled = new Color( averaged, averaged, averaged );
     //            pixel.setColor( grayscaled );
     //        }
     //    }
     }
+
     /**
      * Negates the color of every pixel in the picture
      *
@@ -115,12 +120,12 @@ public class ColorManipulator
             {
                 Pixel pixel = this.picture.getPixel( x, y );
                 Color color = pixel.getColor();
-                
+
                 int negatedRed = 255 - color.getRed();
                 int negatedBlue = 255 - color.getBlue();
                 int negatedGreen = 255 - color.getGreen();
-                
-                Color negated = new Color( negatedRed, negatedBlue, negatedGreen );
+
+                Color negated = new Color( negatedRed, negatedGreen, negatedBlue );
                 pixel.setColor( negated );
             }
         }
@@ -131,16 +136,16 @@ public class ColorManipulator
         // the selfie image must be in the Shepard Fairey folder
         Picture picture= new Picture( "selfiePortrait.jpg" );
         ColorManipulator manipulator = new ColorManipulator( picture );
-        picture.explore();
-        manipulator.maxBlue();
-        picture.explore();
-        manipulator.maxRed();
-        picture.explore();
-        manipulator.maxGreen();
-        picture.explore();
-        manipulator.grayscale();
-        picture.explore();
-        manipulator.negate();
-        picture.explore();
+        //picture.explore();
+        //manipulator.maxBlue();
+        //picture.explore();
+        //manipulator.maxRed();
+        //picture.explore();
+        //manipulator.maxGreen();
+        //picture.explore();
+        //manipulator.grayscale();
+        //picture.explore();
+        //manipulator.negate();
+        //picture.explore();
     }
 }
