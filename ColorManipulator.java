@@ -4,8 +4,8 @@ import java.awt.Color;
 /**
  * Class that manipulates the colors in a specified picture
  *
- * @author gcschmit
- * @version 5 June 2017
+ * @author rpande07
+ * @version 01/17/21
  */
 public class ColorManipulator
 {

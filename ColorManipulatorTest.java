@@ -9,8 +9,8 @@ import java.awt.Color;
 /**
  * The test class ColorManipulatorTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  rpande07
+ * @version 01/17/21
  */
 public class ColorManipulatorTest
 {
@@ -41,6 +41,10 @@ public class ColorManipulatorTest
     {
     }
     
+    /**
+     * Tests if grayscale method works
+     */
+
     @Test
     public void testGrayScale()
     {

@@ -3,8 +3,8 @@ import java.awt.Color;
 /**
  * Transforms a picture by applying a Shepard Fairey-inspired effect.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @rpande07 
+ * @01/17/21
  */
 public class ShepardFairey
 {
@@ -16,6 +16,9 @@ public class ShepardFairey
     private static final Color RED = new Color( 198, 50, 45 );
     private static final Color DARK_BLUE = new Color( 16, 48, 77 );
 
+    /**
+     * Constructor for ShepardFairey class
+     */
     public ShepardFairey( Picture newPicture )
     {
         this.manipulator = new ColorManipulator( newPicture );
@@ -34,7 +37,7 @@ public class ShepardFairey
         int greatest = 0;
         int least = 255;
 
-        
+        // finds greatest and least value of grayscale, used red because red, green, and blue are equal
         for( int y = 0; y < height; y++ )
         {
             for( int x = 0; x < width; x++ )
@@ -51,9 +54,10 @@ public class ShepardFairey
                 
             }
         }
-        System.out.println("g: " + greatest);
-        System.out.println("l: " + least);
+
         int increments = (greatest-least)/4;
+        
+        // seperates into 4 sections for 4 different colors
         for( int y = 0; y < height; y++ )
         {
             for( int x = 0; x < width; x++ )
@@ -79,7 +83,9 @@ public class ShepardFairey
         }
 
     }
-
+    /**
+     * main method for ShepardFairey lab
+     */
     public static void main(String args[])
     {
         // create a new picture object based on the original selfie
@@ -104,7 +110,7 @@ public class ShepardFairey
          * You may need to specify an absolute path. For example:
          *  finalPic.write("C:\\Users\\gschmit\\GitHub\\decisions-loops-gcschmit\\Shepard Fairey\\MrSchmitPortrait.jpg");
          */
-        selfie.write( "PandePortrait.jpg" );
+        selfie.write("/home/rpande/conditions-iterations-rpande07/PandePortrait.jpg" );
 
         // repeat the steps for the selfie in landscape orientation
         selfie = new Picture( "selfieLandscape.jpg" );
@@ -112,7 +118,7 @@ public class ShepardFairey
         selfie.explore();
         fairey.transform();
         selfie.explore();
-        selfie.write( "PandeLandscape.jpg" );
+        selfie.write("/home/rpande/conditions-iterations-rpande07/PandeLandscape.jpg" );
 
         // display the transformed selfie picture again
         selfie.explore();
