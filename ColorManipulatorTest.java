@@ -43,11 +43,10 @@ public class ColorManipulatorTest
     @Test
     public void testGrayScale()
     {
-        Picture picture= new Picture( "selfiePortrait.jpg" );
+        Picture picture = new Picture( "selfiePortrait.jpg" );
         ColorManipulator manipulator = new ColorManipulator( picture );
         picture.explore();
         manipulator.grayscale();
-        picture.explore();
-        assertEquals(151, actualPixelValue); // compare thet expected pixel's gray value vs. the actual gray value
+        assertEquals(151, picture.getPixel(113,328)); // compare thet expected pixel's gray value vs. the actual gray value
     }
 }
