@@ -31,6 +31,7 @@ public class ColorManipulator
     {
         return this.picture;
     }
+
     /**
      * Sets the blue component of the color of every pixel in the picture to the maximum value
      *
@@ -83,25 +84,25 @@ public class ColorManipulator
 
     public void grayscale()
     {
-    //    int width = this.picture.getWidth();
-    //    int height = this.picture.getHeight();
+        int width = this.picture.getWidth();
+        int height = this.picture.getHeight();
 
-    //    for( int y = 0; y < height; y++ )
-    //    {
-    //        for( int x = 0; x < width; x++ )
-    //        {
-    //            Pixel pixel = this.picture.getPixel( x, y );
-    //            Color color = pixel.getColor();
+        for( int y = 0; y < height; y++ )
+        {
+            for( int x = 0; x < width; x++ )
+            {
+                Pixel pixel = this.picture.getPixel( x, y );
+                Color color = pixel.getColor();
 
-    //            int red = color.getRed();
-    //            int blue = color.getBlue();
-    //            int green = color.getGreen();
-    //            int averaged = (red + blue + green)/3;
+                int red = color.getRed();
+                int blue = color.getBlue();
+                int green = color.getGreen();
+                int averaged = (red + blue + green)/3;
 
-    //            Color grayscaled = new Color( averaged, averaged, averaged );
-    //            pixel.setColor( grayscaled );
-    //        }
-    //    }
+                Color grayscaled = new Color( averaged, averaged, averaged );
+                pixel.setColor( grayscaled );
+            }
+        }
     }
 
     /**
@@ -129,6 +130,16 @@ public class ColorManipulator
                 pixel.setColor( negated );
             }
         }
+    }
+
+    public void posterize(Color newColor, int x, int y)
+    {
+        int width = this.picture.getWidth();
+        int height = this.picture.getHeight();
+
+        Pixel pixel = this.picture.getPixel( x, y );
+        pixel.setColor(newColor);
+
     }
 
     public static void main(String args[])
