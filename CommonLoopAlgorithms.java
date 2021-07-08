@@ -65,7 +65,8 @@ public class CommonLoopAlgorithms
     */
    public static int compareAdjacent()
    {
-       return 0;
+       Scanner s = new Scanner(System.in);
+       while (s.nextInt())
    }
    
    /*
